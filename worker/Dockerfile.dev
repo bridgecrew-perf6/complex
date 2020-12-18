@@ -1,0 +1,13 @@
+#docker development file for Worker process
+
+FROM node:alpine
+
+WORKDIR '/app'
+
+COPY ./package.json ./
+
+RUN npm install
+
+COPY . .
+
+CMD [ "npm", "run", "dev" ]
